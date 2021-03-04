@@ -1,0 +1,62 @@
+*{
+    -webkit-appearance: none;
+}
+
+body{
+    height: 100%;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.body-content{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 50px 0;
+}
+
+
+
+#acclogo{
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+}
+
+#gapps{
+    width: 40px;
+    height: 40px;
+}
+
+ul{
+    list-style-position: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    display: inline;
+}
+
+li{
+    display: inline;
+    float: left;
+}
+
+li.a{
+    padding-left: 15px;
+}
+
+.directlinks{
+    display: inline;
+    padding: 0 15px;
+}
+
+.bottom-navigation{
+    position: absolute;
+    bottom: 0;
+    background-color: #f2f2f2;
+}
