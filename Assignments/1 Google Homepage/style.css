@@ -7,6 +7,7 @@
 
 body{
     height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .main{
@@ -14,18 +15,6 @@ body{
     flex-direction: column;
     height: 100%;
 }
-
-.body-content{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 50px 0;
-}
-
-
-
-
 
 
 ul{
@@ -78,49 +67,137 @@ li.a{
     height: 32px;
 }
 
+.body-content{
+    
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 50px 0;
+}
+
+.logo{
+    padding-top: 109px;
+    text-align: center;
+}
+
+.input{
+    margin-top: 30px;
+    text-align: center;
+}
 .form{
+    margin: 0 auto;
     max-width: 584px;
 }
 
 .main-search{
+    position: relative;
     display: flex;
     align-items: center;
+    width: 100%;
+    height: 44px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    padding: 5px 8px 0 16px;
 }
 
 .search-logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     height: 100%;
+    margin-top: -5px;
+    margin-right: 7px;
 }
 
 .search-logo svg{
     width: 20px;
     height: 20px;
+    fill: #9aa0a6;
 }
 
 .search-input{
     width: 100%;
-
+    height: 100%;
 }
 
 .search-input input{
     width: 100%;
     height: 100%;
+    border: none;
+    font-size: 16px;
+    margin-top: -3px;
+}
+
+.search-input input:focus{
+    outline: none;
 }
 
 .mic-logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     height: 100%;
+    margin-top: -5px;
 }
 
 .mic-logo svg{
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
+}
+
+.submit{
+    padding-top: 25px;
+    margin: 0 auto;
+}
+
+.submit-search{
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.submit-search:hover{
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+    background-color: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    color: #222;
+}
+
+.submit-lucky{
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.submit-lucky:hover{
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+    background-color: #f8f8f8;
+    border: 1px solid #c6c6c6;
+    color: #222;
 }
 
 .bottom-navigation{
