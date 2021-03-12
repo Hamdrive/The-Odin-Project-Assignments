@@ -60,6 +60,7 @@ let letsPlay = () => {
 
 }
 
+alert("IT'S TIME HUMAN, FOR THE ULTIMATE BATTLE, THE BATTLE OF WITS, USING THE GREATEST SKILL THERE IS....  ROCK PAPER SCISSORS.")
 for(let i = 0; i<5; i++){
     letsPlay();
 }
