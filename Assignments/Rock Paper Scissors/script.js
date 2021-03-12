@@ -2,6 +2,10 @@ playableMoves = ['ROCK', 'PAPER','SCISSORS']
 let userScore = 0;
 let computerScore = 0;
 
+alert(
+  "IT'S TIME HUMAN, FOR THE ULTIMATE BATTLE, THE BATTLE OF WITS, USING THE GREATEST SKILL THERE IS....  ROCK PAPER SCISSORS."
+);
+
 let computerMove = () => {
     moveGenerator = Math.floor(Math.random() * 3);
     computerMovePlayed = playableMoves[moveGenerator];
@@ -60,7 +64,8 @@ let letsPlay = () => {
 
 }
 
-alert("IT'S TIME HUMAN, FOR THE ULTIMATE BATTLE, THE BATTLE OF WITS, USING THE GREATEST SKILL THERE IS....  ROCK PAPER SCISSORS.")
+
+
 for(let i = 0; i<5; i++){
     letsPlay();
 }
