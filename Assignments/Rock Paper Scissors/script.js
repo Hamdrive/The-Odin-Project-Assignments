@@ -1,4 +1,6 @@
 playableMoves = ['ROCK', 'PAPER','SCISSORS']
+let userScore = 0;
+let computerScore = 0;
 
 let computerMove = () => {
     moveGenerator = Math.floor(Math.random() * 3);
@@ -7,14 +9,13 @@ let computerMove = () => {
 }
 
 let letsPlay = () => {
-    let userScore = 0;
-    let computerScore = 0;
+    
     let userPlay = prompt("Enter your move, Human").toUpperCase();
     let computerPlay = computerMove();
     
     
     if(computerPlay === userPlay){
-        console.log(computerMoveIndex, userMoveIndex)
+        console.log(computerScore, userScore)
         alert("IT'S A TIE")
     }
     else if (computerPlay === "ROCK") {
@@ -24,27 +25,32 @@ let letsPlay = () => {
             alert("HUMAN WINS");
         }
         if (userPlay === "SCISSORS"){
-            console.log(computerMoveIndex, userMoveIndex);
+            computerScore++;
+            console.log(computerScore, userScore);
             alert("COMPUTER WINS");
         }
     }
     else if (computerPlay === "PAPER") {
         if (userPlay === "SCISSORS"){
-            console.log(computerMoveIndex, userMoveIndex);
+            userScore++;
+            console.log(computerScore, userScore);
             alert("HUMAN WINS");
         }
         if (userPlay === "ROCK"){
-            console.log(computerMoveIndex, userMoveIndex);
+            computerScore++;
+            console.log(computerScore, userScore);
             alert("COMPUTER WINS");
         }
     }
     else if (computerPlay === "SCISSORS") {
         if (userPlay === "ROCK"){
-            console.log(computerMoveIndex, userMoveIndex);
+            userScore++;
+            console.log(computerScore, userScore);
             alert("HUMAN WINS");
         }
         if (userPlay === "PAPER"){
-            console.log(computerMoveIndex, userMoveIndex);
+            computerScore++;
+            console.log(computerScore, userScore);
             alert("COMPUTER WINS");
         }
     }
@@ -56,4 +62,14 @@ let letsPlay = () => {
 
 for(let i = 0; i<5; i++){
     letsPlay();
+}
+
+if (computerScore > userScore){
+    alert("COMPUTER IS VICTORIOUS!");
+}
+else if (computerScore < userScore) {
+    alert("HUMAN IS VICTORIOUS!");
+} 
+else {
+    alert("NO ONE IS VICTORIOUS!");
 }
