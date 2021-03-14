@@ -9,3 +9,8 @@ img{
     color: red;
     font-size: 30px;
 }
+
+.moves-selector{
+    display: flex;
+    align-items: center;
+}
