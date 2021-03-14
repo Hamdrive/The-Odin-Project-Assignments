@@ -3,9 +3,14 @@ let userScore = 0;
 let computerScore = 0;
 let round = 1;
 
-let rockmove = document.querySelector(".rockimg");
-let papermove = document.querySelector(".paperimg");
-let scissorsmove = document.querySelector(".scissorsimg");
+let rockMove = document.querySelector(".rockimg");
+let paperMove = document.querySelector(".paperimg");
+let scissorsMove = document.querySelector(".scissorsimg");
+let compScoreValue = document.querySelector("#compscorevalue");
+let userScoreValue = document.querySelector("#userscorevalue");
+let roundValue = document.querySelector("#roundnumber");
+let finalResult = document.querySelector("#finalresult");
+let moveResult = document.querySelector("#moveresult");
 
 let computerMove = () => {
   moveGenerator = Math.floor(Math.random() * 3);
@@ -14,7 +19,9 @@ let computerMove = () => {
 };
 
 let letsPlay = userMove => {
+    
     if(round < 6){
+        
         let computerPlay = computerMove();
         let userPlay = userMove.toUpperCase();
 
@@ -25,55 +32,65 @@ let letsPlay = userMove => {
         } else if (computerPlay === "ROCK") {
           if (userPlay === "PAPER") {
             userScore++;
+            userScoreValue.innerHTML = userScore;
             console.log(computerScore, userScore);
             
           }
           if (userPlay === "SCISSORS") {
             computerScore++;
+            compScoreValue.innerHTML = computerScore;
             console.log(computerScore, userScore);
             
           }
         } else if (computerPlay === "PAPER") {
           if (userPlay === "SCISSORS") {
             userScore++;
+            userScoreValue.innerHTML = userScore;
             console.log(computerScore, userScore);
             
           }
           if (userPlay === "ROCK") {
             computerScore++;
+            compScoreValue.innerHTML = computerScore;
             console.log(computerScore, userScore);
             
           }
         } else if (computerPlay === "SCISSORS") {
           if (userPlay === "ROCK") {
             userScore++;
+            userScoreValue.innerHTML = userScore;
             console.log(computerScore, userScore);
             
           }
           if (userPlay === "PAPER") {
             computerScore++;
+            compScoreValue.innerHTML = computerScore;
             console.log(computerScore, userScore);
             
           }
         }
 
+        moveResult.innerHTML = `Computer played ${computerPlay} while scrawny human played ${userPlay}`;
         round++;
+        if (round < 6) {
+          roundValue.innerHTML = round;
+        }
     }
 
     if (round > 5) {
       if (computerScore > userScore) {
-        alert("COMPUTER IS VICTORIOUS!");
+        finalResult.innerHTML = "COMPUTER IS VICTORIOUS!";
       } else if (computerScore < userScore) {
-        alert("HUMAN IS VICTORIOUS!");
+        finalResult.innerHTML = "HUMAN IS VICTORIOUS!";
       } else {
-        alert("NO ONE IS VICTORIOUS!");
+        finalResult.innerHTML = "NO ONE IS VICTORIOUS!";
       }
     }
     
 }
 
-rockmove.addEventListener("click", (e) => letsPlay(e.target.id));
-papermove.addEventListener("click", (e) => letsPlay(e.target.id));
-scissorsmove.addEventListener("click", (e) => letsPlay(e.target.id));
+rockMove.addEventListener("click", (e) => letsPlay(e.target.id));
+paperMove.addEventListener("click", (e) => letsPlay(e.target.id));
+scissorsMove.addEventListener("click", (e) => letsPlay(e.target.id));
 
 

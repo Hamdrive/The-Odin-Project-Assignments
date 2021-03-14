@@ -4,3 +4,8 @@ img{
     border: solid 2px black;
     border-radius: 50%;
 }
+
+#finalresult{
+    color: red;
+    font-size: 30px;
+}
