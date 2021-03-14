@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Scissors</title>
     
 </head>
 <body>
     <main class="main">
         <div class="top">
             <div class="title">
-                <div class="title-text"></div>
+                <p id="title-text">ROCK PAPER SCISSORS</p>
             </div>
         </div>
         <div class="body">
@@ -20,8 +21,14 @@
             </div>
             <div class="scorecard">
                 <div class="scores">
-                    <div class="compscore"></div>
-                    <div class="userscore"></div>
+                    <div class="compscore">
+                        <p>Computer Score: </p>
+                        <p id="compscorevalue">0</p>
+                    </div>
+                    <div class="userscore">
+                        <p>Player Score: </p>
+                        <p id="userscorevalue">0</p>
+                    </div>
                 </div>
             </div>
             <div class="moveresult">
@@ -29,9 +36,21 @@
             </div>
             <div class="moves">
                 <div class="moves-selector">
-                    <div class="rock"></div>
-                    <div class="paper"></div>
-                    <div class="scissors"></div>
+                    <div class="rock">
+                        <div class="rockimg">
+                            <img src="Images/rock.png" alt="rock">
+                        </div>
+                    </div>
+                    <div class="paper">
+                        <div class="paperimg">
+                            <img src="Images/paper.png" alt="paper">
+                        </div>
+                    </div>
+                    <div class="scissors">
+                        <div class="scissorsimg">
+                            <img src="Images/scissors.png" alt="scissors">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
