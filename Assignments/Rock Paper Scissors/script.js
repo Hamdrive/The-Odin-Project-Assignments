@@ -11,6 +11,7 @@ let userScoreValue = document.querySelector("#userscorevalue");
 let roundValue = document.querySelector("#roundnumber");
 let finalResult = document.querySelector("#finalresult");
 let moveResult = document.querySelector("#moveresult");
+let reloadText = document.querySelector("#reloadtext");
 
 let computerMove = () => {
   moveGenerator = Math.floor(Math.random() * 3);
@@ -25,47 +26,39 @@ let letsPlay = userMove => {
         let computerPlay = computerMove();
         let userPlay = userMove.toUpperCase();
 
-        console.log(computerPlay, userPlay);
         if (computerPlay === userPlay) {
-          console.log(computerScore, userScore);
           
         } else if (computerPlay === "ROCK") {
           if (userPlay === "PAPER") {
             userScore++;
             userScoreValue.innerHTML = userScore;
-            console.log(computerScore, userScore);
             
           }
           if (userPlay === "SCISSORS") {
             computerScore++;
             compScoreValue.innerHTML = computerScore;
-            console.log(computerScore, userScore);
             
           }
         } else if (computerPlay === "PAPER") {
           if (userPlay === "SCISSORS") {
             userScore++;
             userScoreValue.innerHTML = userScore;
-            console.log(computerScore, userScore);
             
           }
           if (userPlay === "ROCK") {
             computerScore++;
             compScoreValue.innerHTML = computerScore;
-            console.log(computerScore, userScore);
             
           }
         } else if (computerPlay === "SCISSORS") {
           if (userPlay === "ROCK") {
             userScore++;
             userScoreValue.innerHTML = userScore;
-            console.log(computerScore, userScore);
             
           }
           if (userPlay === "PAPER") {
             computerScore++;
             compScoreValue.innerHTML = computerScore;
-            console.log(computerScore, userScore);
             
           }
         }
@@ -74,15 +67,21 @@ let letsPlay = userMove => {
         if (round < 11) {
           roundValue.innerHTML = round;
         }
+        else{
+           roundValue.innerHTML = "Game Over!" 
+        }
     }
 
     if (round > 10) {
       if (computerScore > userScore) {
         finalResult.innerHTML = "COMPUTER IS VICTORIOUS!";
+        reloadText.innerHTML = "Reload page for new game"
       } else if (computerScore < userScore) {
         finalResult.innerHTML = "HUMAN IS VICTORIOUS!";
+        reloadText.innerHTML = "Reload page for new game";
       } else {
         finalResult.innerHTML = "NO ONE IS VICTORIOUS!";
+        reloadText.innerHTML = "Reload page for new game";
       }
     }
     

@@ -6,6 +6,7 @@
 
 main{
     height: 100%;
+    background-color: rgb(236, 236, 236);
 }
 
 .top{
@@ -81,7 +82,6 @@ main{
 
 .moveresulttext{
     margin: 0 0 20px 0;
-    flex-basis: 75%;
 }
 
 .moveresulttext p{
@@ -94,21 +94,36 @@ main{
     justify-content: center;
 }
 
-.finalresulttext{
-    margin: 0 0 20px 0;
-}
-
 .finalresulttext p{
     font-family: 'Permanent Marker', cursive;
     color: red;
     font-size: 60px;
 }
 
+.reload{
+    display: flex;
+    justify-content: center;
+}
+
+.reloadtext{
+    margin: 0 0 20px 0;
+}
+
+.reloadtext p{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+}
+
 img{
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 175px;
     border: solid 2px black;
     border-radius: 50%;
+}
+
+img:hover{
+    transform: scale(1.2);
+    transition-delay: 0.1s;
 }
 
 .moves-selector{
