@@ -163,8 +163,11 @@ img:hover{
 }
 
 @media (min-width: 768px){
-    body{
-        overflow: scroll;
+    main{
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+
     }
 }
 
