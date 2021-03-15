@@ -104,8 +104,6 @@ main{
     font-size: 60px;
 }
 
-
-
 img{
     width: 150px;
     height: 150px;
@@ -113,11 +111,39 @@ img{
     border-radius: 50%;
 }
 
-.moves{
+.moves-selector{
     display: flex;
     justify-content: center;
+    flex-direction: row;
 }
 
-.moves-selector{
-    flex-wrap: nowrap;
+.rockimg, .paperimg, .scissorsimg{
+    margin: 0 30px;
 }
+
+.footer{
+    margin-top: 30px;
+    position: relative;
+    bottom: 0%;
+    height: 35px;
+    background-color:cyan;
+}
+
+.footer-text{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.acknowledgement{
+    display: flex;
+    align-items: center;
+    
+}
+
+.acknowledgement p{
+    word-spacing: 3px;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+

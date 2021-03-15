@@ -20,7 +20,7 @@ let computerMove = () => {
 
 let letsPlay = userMove => {
     
-    if(round < 6){
+    if(round < 11){
         
         let computerPlay = computerMove();
         let userPlay = userMove.toUpperCase();
@@ -71,12 +71,12 @@ let letsPlay = userMove => {
         }
         moveResult.innerHTML = `Computer played ${computerPlay} while scrawny human played ${userPlay}`;
         round++;
-        if (round < 6) {
+        if (round < 11) {
           roundValue.innerHTML = round;
         }
     }
 
-    if (round > 5) {
+    if (round > 10) {
       if (computerScore > userScore) {
         finalResult.innerHTML = "COMPUTER IS VICTORIOUS!";
       } else if (computerScore < userScore) {
