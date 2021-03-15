@@ -69,7 +69,6 @@ let letsPlay = userMove => {
             
           }
         }
-
         moveResult.innerHTML = `Computer played ${computerPlay} while scrawny human played ${userPlay}`;
         round++;
         if (round < 6) {

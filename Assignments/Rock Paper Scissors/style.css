@@ -1,3 +1,111 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main{
+    height: 100%;
+}
+
+.top{
+    
+    width: 100%;
+}
+
+.title{
+    display: flex; /*flexbox follows parent-child relationship*/
+    width: 100%;
+    justify-content: center;
+}
+
+#title-text{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 70px;
+}
+
+.intro{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.intro-text{
+    margin: 0 auto;
+    font-family: 'Creepster', cursive;
+    font-size: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    animation: type 3.5s steps(100,end);
+}
+
+@keyframes type{
+    from {width: 0} to {width: 70%}
+}
+
+.round{
+    display: flex;
+    justify-content: center;
+    flex-basis: 25%;
+}
+
+.round p{
+    margin-right: 25px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 40px;
+}
+
+.scores{
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.compscore, .userscore{
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.compscore p, .userscore p{
+    margin-right: 25px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 40px;
+}
+
+.movedescription{
+    display: flex;
+    justify-content: center;
+}
+
+.moveresulttext{
+    margin: 0 0 20px 0;
+    flex-basis: 75%;
+}
+
+.moveresulttext p{
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+}
+
+.finaldescription{
+    display: flex;
+    justify-content: center;
+}
+
+.finalresulttext{
+    margin: 0 0 20px 0;
+}
+
+.finalresulttext p{
+    font-family: 'Permanent Marker', cursive;
+    color: red;
+    font-size: 60px;
+}
+
+
+
 img{
     width: 150px;
     height: 150px;
@@ -5,12 +113,11 @@ img{
     border-radius: 50%;
 }
 
-#finalresult{
-    color: red;
-    font-size: 30px;
+.moves{
+    display: flex;
+    justify-content: center;
 }
 
 .moves-selector{
-    display: flex;
-    align-items: center;
+    flex-wrap: nowrap;
 }
