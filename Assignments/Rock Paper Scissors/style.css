@@ -162,3 +162,9 @@ img:hover{
     font-family: 'Roboto', sans-serif;
 }
 
+@media (min-width: 768px){
+    body{
+        overflow: scroll;
+    }
+}
+
