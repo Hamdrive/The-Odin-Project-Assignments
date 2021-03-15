@@ -162,7 +162,7 @@ img:hover{
     font-family: 'Roboto', sans-serif;
 }
 
-@media (min-width: 768px){
+@media (max-width: 768px){
     main{
         display: flex;
         flex-wrap: nowrap;
