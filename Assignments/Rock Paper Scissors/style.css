@@ -162,7 +162,7 @@ img:hover{
     font-family: 'Roboto', sans-serif;
 }
 
-@media (max-width: 768px){
+@media (max-width: 400px){
     main{
         overflow-x: scroll;
     }
@@ -174,4 +174,5 @@ img:hover{
         flex-wrap: wrap;
     }
 }
+
 
