@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <main class="main">
+        <form action="">
+          <label for="bookname">
+            Enter Bookname:
+            <input type="text" name="bookname" id="bookname" />
+          </label>
+          <label for="bookauthor">
+            Enter Author Name:
+            <input type="text" name="bookauthor" id="bookauthor" />
+          </label>
+          <label for="bookdate">
+            Date of Purchase:
+            <input
+              type="date"
+              name="bookdate"
+              id="bookdate"
+              min="2017-01-01"
+              max="2021-12-31"
+              required
+            />
+          </label>
+        </form>
+      </main>
+    </div>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
