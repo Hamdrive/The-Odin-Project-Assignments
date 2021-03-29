@@ -1,4 +1,4 @@
-//Factory function
+//Factory function to create new book object
 
 const newBook = (bookName, authorName, date) => {
 
@@ -18,13 +18,13 @@ const addBook = (book) => {
     row.innerHTML = `<td>${book.bookName}</td>
     <td>${book.authorName}</td>
     <td>${book.date}</td>
-    <td><a href="#" class="delete-btn>X</a></td>
-    `;
+    <td><a href="#" class="delete-btn delete">X</a></td>`;
 
     bookList.appendChild(row);
+    document.getElementById("bookform").reset();
 };
 
-//Add book to table on submit
+//Event call to add book to table on submit
 document.addEventListener('submit', (e) => {
     e.preventDefault();
     const name = document.getElementById("bookname").value;
@@ -35,4 +35,15 @@ document.addEventListener('submit', (e) => {
     
     addBook(book);
 })
+
+//Remove book from table
+const deleteBook = del => {
+    if (del.classList.contains('delete')){
+        del.parentElement.parentElement.remove();
+    }
+}
+
+//Event call to remove a book on clicking X
+const bookForm = document.getElementById("book-readlist");
+bookForm.addEventListener('click', (e) => {deleteBook(e.target)})
 
