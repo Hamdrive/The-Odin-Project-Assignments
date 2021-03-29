@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#bookentry{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+label{
+    margin-right: auto;
+    padding: 10px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    width: 100%;
+}
+
+input{
+    width: 300px;
+    margin-left: 0;
+    height: 30px;
+    float: right;
+}
+
+#submitbtn{
+    margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
