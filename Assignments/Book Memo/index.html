@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To Do List</title>
+    <title>book Memo</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -13,11 +13,11 @@
         <form action="">
           <label for="bookname">
             Enter Bookname:
-            <input type="text" name="bookname" id="bookname" />
+            <input type="text" name="bookname" id="bookname" required />
           </label>
           <label for="bookauthor">
             Enter Author Name:
-            <input type="text" name="bookauthor" id="bookauthor" />
+            <input type="text" name="bookauthor" id="bookauthor" required />
           </label>
           <label for="bookdate">
             Date of Purchase:
@@ -30,6 +30,7 @@
               required
             />
           </label>
+          <button type="submit">Add to Library</button>
         </form>
       </main>
     </div>
