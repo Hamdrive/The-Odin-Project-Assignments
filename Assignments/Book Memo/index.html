@@ -11,15 +11,15 @@
     <div class="container">
       <main class="main">
         <form action="" id="bookentry">
-          <label for="bookname">
+          <label for="bookname" id="bookentry">
             Enter Bookname:
-            <input type="text" name="bookname" id="bookname" required />
+            <input type="text" name="bookname" id="bookname" placeholder="Atomic Habits" required />
           </label>
-          <label for="bookauthor">
+          <label for="bookauthor" id="bookentry">
             Enter Author Name:
-            <input type="text" name="bookauthor" id="bookauthor" required />
+            <input type="text" name="bookauthor" id="bookauthor" placeholder="James Clear" required />
           </label>
-          <label for="bookdate">
+          <label for="bookdate" id="bookentry">
             Date of Purchase:
             <input
               type="date"
@@ -33,6 +33,16 @@
           <button type="submit" id="submitbtn">Add to Library</button>
         </form>
       </main>
+      <table>
+        <thead>
+          <tr>
+            <th>Book</th>
+            <th>Author</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="book-readlist"></tbody>
+      </table>
     </div>
 
     <script src="script.js"></script>
