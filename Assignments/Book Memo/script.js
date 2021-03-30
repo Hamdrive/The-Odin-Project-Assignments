@@ -17,14 +17,14 @@ const getBooksFromLocal = () => {
         books = [];
     }
     else{
-        books = (localStorage.getItem("books"));
-        console.log(books);
+        books = JSON.parse(localStorage.getItem("books"));
+        
     }
     return books;
 }
 
 const addBookToLocal = (book) => {
-    const books = getBooksFromLocal();
+    let books = getBooksFromLocal();
     books.push(book);
     localStorage.setItem("books", JSON.stringify(books));
 }
@@ -69,15 +69,21 @@ document.addEventListener('submit', (e) => {
 
 //Remove book from table
 const deleteBook = del => {
+  let bookName;  
   if (del.classList.contains("delete")) {
+    //Obtain name of book
+    bookName =  del.parentElement.parentElement.firstChild.innerHTML;
     del.parentElement.parentElement.remove();
   }
-  console.log(del.parentElement.parentElement.getElementById("bookname"));
   //Remove book to local storage
-//   removeBookFromLocal();
+  removeBookFromLocal(bookName);
 }
 
 //Event call to remove a book on clicking X
 const bookForm = document.getElementById("book-readlist");
 bookForm.addEventListener('click', (e) => {deleteBook(e.target)})
+
+//Display books from local storage (if any)
+const bookStore = getBooksFromLocal();
+bookStore.forEach(book => addBook(book));
 
