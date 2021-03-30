@@ -9,6 +9,9 @@
   </head>
   <body>
     <div class="container">
+      <div class="title">
+        <p>My Book Memo</p>
+      </div>
       <main class="main">
         <form action="" id="bookform">
           <label for="bookname" id="bookentry">
@@ -33,13 +36,13 @@
           <button type="submit" id="submitbtn">Add to Library</button>
         </form>
       </main>
-      <table>
+      <table id="booktable">
         <thead>
           <tr id="tableheadrow">
-            <th>Book</th>
-            <th>Author</th>
-            <th>Date</th>
-            <th></th>
+            <th id="col1">Book</th>
+            <th id="col2">Author</th>
+            <th id="col3">Date</th>
+            <th id="col4"></th>
           </tr>
         </thead>
         <tbody id="book-readlist"></tbody>
