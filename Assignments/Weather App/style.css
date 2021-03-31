@@ -12,5 +12,40 @@
 }
 
 .title{
-    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px;
+    margin: 20px 0;
+    padding: 10px 0;
+}
+
+.searchloc input{
+    border: 2px solid black;
+    height: 30px;
+    width: 250px;
+}
+
+.location{
+    margin: 10px 0 40px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+}
+
+.currentweatherimg{
+    margin: 10px;
+}
+
+#weathericon{
+    width: 200px;
+    height: 200px;
+}
+
+.currenweathercondn{
+    margin: 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+}
+.currentweathervalue{
+    margin: 40px 0 10px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 60px;
 }

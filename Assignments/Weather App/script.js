@@ -18,7 +18,7 @@ const getWeather = async () => {
     
   displayLocation.innerHTML = city.toUpperCase();
   displaycondn.innerHTML = weatherData.weather[0].main;
-  displayTemp.innerHTML = weatherData.main.temp + " °C";
+  displayTemp.innerHTML = Math.trunc(parseInt(weatherData.main.temp)) + "°C";
   let condn = weatherData.weather[0].main.toLowerCase();
 
   switch (condn) {
