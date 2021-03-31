@@ -1,5 +1,6 @@
 let APIKEY = "31ddc659e3d01083936ae5fe5b503c97";
 let cityName = "Mumbai";
+let displayweathericon = document.querySelector("#weathericon");
 let displaycondn = document.querySelector(".currenweathercondn");
 let displayLocation = document.querySelector(".location");
 let displayTemp = document.querySelector(".currentweathervalue");
@@ -16,7 +17,8 @@ const getWeather = async () => {
   console.log(weatherData);
   displayLocation.innerHTML = city.toUpperCase();
   displaycondn.innerHTML = weatherData.weather[0].main;
-  displayTemp.innerHTML = weatherData.main.temp;
+  displayTemp.innerHTML = weatherData.main.temp + " °C";
+  displayweathericon.src = "sunny.png";
 };
 
 document.addEventListener("keypress", (e) => {
