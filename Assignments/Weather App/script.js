@@ -6,15 +6,16 @@ let displayLocation = document.querySelector(".location");
 let displayTemp = document.querySelector(".currentweathervalue");
 
 const getWeather = async () => {
-  let city = document.querySelector("#search").value;
-  console.log(city);
-  const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKEY}`,
-    { mode: "cors" }
-  );
-
-  const weatherData = await response.json();
-  console.log(weatherData);
+  try {
+    let city = document.querySelector("#search").value;
+    console.log(city);
+    const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKEY}`,
+        { mode: "cors" }
+    );
+    const weatherData = await response.json();
+    console.log(weatherData);
+    
   displayLocation.innerHTML = city.toUpperCase();
   displaycondn.innerHTML = weatherData.weather[0].main;
   displayTemp.innerHTML = weatherData.main.temp + " °C";
@@ -43,7 +44,9 @@ const getWeather = async () => {
     default:
       displayweathericon.src = "Images/sunny.png"; 
   }
-  
+  }catch(error){
+    console.log(error);
+  }
 };
 
 document.addEventListener("keypress", (e) => {
