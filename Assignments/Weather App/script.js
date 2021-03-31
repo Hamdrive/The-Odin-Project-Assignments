@@ -18,7 +18,32 @@ const getWeather = async () => {
   displayLocation.innerHTML = city.toUpperCase();
   displaycondn.innerHTML = weatherData.weather[0].main;
   displayTemp.innerHTML = weatherData.main.temp + " °C";
-  displayweathericon.src = "sunny.png";
+  let condn = weatherData.weather[0].main.toLowerCase();
+
+  switch (condn) {
+    case "sunny":
+    case "clear":
+      displayweathericon.src = "Images/sunny.png";
+      break;
+    case "clouds":
+      displayweathericon.src = "Images/clouds.png";
+      break;
+    case "overcast":
+      displayweathericon.src = "Images/overcast.png";
+      break;
+    case "rain":
+      displayweathericon.src = "Images/rain.png";
+      break;
+    case "drizzle":
+      displayweathericon.src = "Images/drizzle.png";
+      break;
+    case "snow":
+      displayweathericon.src = "Images/snow.png";
+      break;
+    default:
+      displayweathericon.src = "Images/sunny.png"; 
+  }
+  
 };
 
 document.addEventListener("keypress", (e) => {
