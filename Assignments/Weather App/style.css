@@ -75,6 +75,19 @@ body{
     font-size: 60px;
 }
 
+.footer{
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.footer p{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 22px;
+}
+
 /* loader animation */
 .loader{
     width: 100%;
