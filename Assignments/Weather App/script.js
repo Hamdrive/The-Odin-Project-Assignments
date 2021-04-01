@@ -4,17 +4,23 @@ let displayweathericon = document.querySelector("#weathericon");
 let displaycondn = document.querySelector(".currenweathercondn");
 let displayLocation = document.querySelector(".location");
 let displayTemp = document.querySelector(".currentweathervalue");
+let loader = document.querySelector(".loader");
+loader.style.visibility = "hidden";
 
-const getWeather = async () => {
+const getWeather = async (loader) => {
   try {
+    
     let city = document.querySelector("#search").value;
-    console.log(city);
+    // console.log(city);
+    
+    loader.style.visibility = "visible";
     const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKEY}`,
         { mode: "cors" }
     );
     const weatherData = await response.json();
-    console.log(weatherData);
+    loader.style.visibility = "hidden";
+    // console.log(weatherData);
     
   displayLocation.innerHTML = city.toUpperCase();
   displaycondn.innerHTML = weatherData.weather[0].main;
@@ -51,7 +57,7 @@ const getWeather = async () => {
 
 document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-    getWeather();
+    getWeather(loader);
   }
 });
 
