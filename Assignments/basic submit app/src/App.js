@@ -10,14 +10,30 @@ class App extends Component {
       tasks: [],
     };
   }
+
+  taskInput = (e) =>{
+    this.setState={
+      task: e.target.value,
+    }
+  }
+
+  taskAddition = (e) =>{
+    e.preventDefault();
+    this.setState={
+      tasks: this.state.tasks.concat(this.state.task),
+      task: "",
+    }
+  }
+
+
   
   render() {
     return (
       <div>
         <form>
           <label htmlFor="textInput">Enter Item</label>
-          <input type="text" id="textInput"/>
-          <button type="submit">Add to List</button>
+          <input type="text" id="textInput" value={this.state.task} onChange={this.state.taskInput}/>
+          <button type="submit" onSubmit={this.state.taskAddition}>Add to List</button>
         </form>
       </div>
     );
