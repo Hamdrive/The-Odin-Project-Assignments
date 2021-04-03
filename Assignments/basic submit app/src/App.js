@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Overview from "./components/Overview";
 
 class App extends Component {
 
@@ -28,13 +29,16 @@ class App extends Component {
 
   
   render() {
+    const {task, tasks} = this.state;
+
     return (
       <div>
         <form>
           <label htmlFor="textInput">Enter Item</label>
-          <input type="text" id="textInput" value={this.state.task} onChange={this.state.taskInput}/>
+          <input type="text" id="textInput" value={task} onChange={this.state.taskInput}/>
           <button type="submit" onSubmit={this.state.taskAddition}>Add to List</button>
         </form>
+        <Overview tasks={tasks} />
       </div>
     );
   }
