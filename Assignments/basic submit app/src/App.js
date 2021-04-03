@@ -13,17 +13,17 @@ class App extends Component {
   }
 
   taskInput = (e) =>{
-    this.setState={
+    this.setState({
       task: e.target.value,
-    }
+    })
   }
 
   taskAddition = (e) =>{
     e.preventDefault();
-    this.setState={
+    this.setState({
       tasks: this.state.tasks.concat(this.state.task),
       task: "",
-    }
+    });
   }
 
 
@@ -35,8 +35,15 @@ class App extends Component {
       <div>
         <form>
           <label htmlFor="textInput">Enter Item</label>
-          <input type="text" id="textInput" value={task} onChange={this.state.taskInput}/>
-          <button type="submit" onSubmit={this.state.taskAddition}>Add to List</button>
+          <input
+            type="text"
+            id="textInput"
+            value={task}
+            onChange={this.taskInput}
+          />
+          <button type="submit" onClick={this.taskAddition}>
+            Add to List
+          </button>
         </form>
         <Overview tasks={tasks} />
       </div>
