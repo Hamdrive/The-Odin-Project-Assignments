@@ -2,34 +2,31 @@ import React, { Component } from "react";
 import Overview from "./components/Overview";
 
 class App extends Component {
-
-  constructor(){
+  constructor() {
     super();
 
-    this.state={
+    this.state = {
       task: "",
       tasks: [],
     };
   }
 
-  taskInput = (e) =>{
+  taskInput = (e) => {
     this.setState({
       task: e.target.value,
-    })
-  }
+    });
+  };
 
-  taskAddition = (e) =>{
+  taskAddition = (e) => {
     e.preventDefault();
     this.setState({
       tasks: this.state.tasks.concat(this.state.task),
       task: "",
-    });
-  }
+    });  
+  };
 
-
-  
   render() {
-    const {task, tasks} = this.state;
+    const { task, tasks } = this.state;
 
     return (
       <div>
