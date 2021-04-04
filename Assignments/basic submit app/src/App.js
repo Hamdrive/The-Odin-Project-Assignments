@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Overview from "./components/Overview";
+import uniqid from "uniqid";
 
 class App extends Component {
   constructor() {
@@ -12,8 +13,9 @@ class App extends Component {
   }
 
   taskInput = (e) => {
+    const newTask = { id: uniqid(), taskValue: e.target.value };
     this.setState({
-      task: e.target.value,
+      task: newTask,
     });
   };
 
@@ -22,7 +24,18 @@ class App extends Component {
     this.setState({
       tasks: this.state.tasks.concat(this.state.task),
       task: "",
-    });  
+    });
+  };
+
+
+  taskDeletion = (id) => {
+    const newTaskList = Object.assign([], this.state.tasks).filter(
+      (task) => task.id !== id
+    );
+    
+    this.setState({
+      tasks: newTaskList,
+    })
   };
 
   render() {
@@ -35,14 +48,14 @@ class App extends Component {
           <input
             type="text"
             id="textInput"
-            value={task}
+            value={task.taskValue || ""}
             onChange={this.taskInput}
           />
           <button type="submit" onClick={this.taskAddition}>
             Add to List
           </button>
         </form>
-        <Overview tasks={tasks} />
+        <Overview tasks={tasks} taskDeletion={this.taskDeletion} />
       </div>
     );
   }
