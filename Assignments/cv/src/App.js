@@ -4,6 +4,98 @@ import Edexperience from "./components/Edexperience";
 import Workexperience from "./components/Workexperience";
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      fName: "",
+      lName: "",
+      userEmail: "",
+      mobNumber: "",
+      DOB: "",
+      studyLoc: "",
+      studyField: "",
+      startStudy: "",
+      endStudy: "",
+      compName: "",
+      compTitle: "",
+      startWork: "",
+      endWork: "",
+      workSummary: "",
+      reqdInfo: "",
+      edExp: "",
+      workExp: "",
+      userCV: [],
+    };
+  }
+
+  onHandleChange = (e) => {
+    const value = e.target.value;
+    const name = e.target.name;
+
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  reqdInfoSubmitChange = (e) => {
+    e.preventDefault();
+
+    this.setState({
+      edExp: {
+        fName: this.state.fName,
+        lName: this.state.lName,
+        userEmail: this.state.userEmail,
+        mobNumber: this.state.mobNumber,
+        DOB: this.state.DOB,
+      },
+      userCV: this.state.userCV.concat(this.state.reqdInfo),
+      fName: "",
+      lName: "",
+      userEmail: "",
+      mobNumber: "",
+      DOB: "",
+    });
+  };
+
+  edExpSubmitChange = (e) => {
+    e.preventDefault();
+
+    this.setState({
+      edExp: {
+        studyLoc: this.state.studyLoc,
+        studyField: this.state.studyField,
+        startStudy: this.state.startStudy,
+        endStudy: this.state.endStudy,
+      },
+      userCV: this.state.userCV.concat(this.state.edExp),
+      studyLoc: "",
+      studyField: "",
+      startStudy: "",
+      endStudy: "",
+    });
+  };
+
+  workExpSubmitChange = (e) => {
+    e.preventDefault();
+
+    this.setState({
+      workExp: {
+        compName: this.state.compName,
+        compTitle: this.state.compTitle,
+        startWork: this.state.startWork,
+        endWork: this.state.endWork,
+        workSummary: this.state.workSummary,
+      },
+      userCV: this.state.userCV.concat(this.state.workExp),
+      compName: "",
+      compTitle: "",
+      startWork: "",
+      endWork: "",
+      workSummary: "",
+    });
+  };
+
   render() {
     return (
       <div>
@@ -23,16 +115,12 @@ class App extends Component {
                 name="fName"
                 id="fNameInput"
                 placeholder="First name"
+                required
               />
             </div>
             <div className="lName">
               <label htmlFor="lName">Last Name:</label>
-              <input
-                type="text"
-                name="lName"
-                id="lNameInput"
-                placeholder="Last name"
-              />
+              <input type="text" name="lName" id="lNameInput" placeholder="Last name" required />
             </div>
             <div className="userEmail">
               <label htmlFor="useremail">Email:</label>
@@ -41,6 +129,7 @@ class App extends Component {
                 name="userEmail"
                 id="userEmailInput"
                 placeholder="example@abc.com"
+                required
               />
             </div>
             <div className="mobNumber">
@@ -50,11 +139,12 @@ class App extends Component {
                 name="mobNumber"
                 id="mobumberInput"
                 placeholder="123-456-789"
+                required
               />
             </div>
             <div className="DOB">
               <label htmlFor="DOB">Date of Birth:</label>
-              <input type="date" name="DOB" id="DOBInput" />
+              <input type="date" name="DOB" id="DOBInput" required />
             </div>
             <button>Save</button>
           </div>
@@ -93,18 +183,12 @@ class App extends Component {
           </div>
 
           <div className="workExpInfo">
-
             <label htmlFor="workExpText">
               <u>Education Experience</u>
             </label>
             <div className="compName">
               <label htmlFor="compName">Company Name:</label>
-              <input
-                type="text"
-                name="compName"
-                id="compNameInput"
-                placeholder="Company Name"
-              />
+              <input type="text" name="compName" id="compNameInput" placeholder="Company Name" />
             </div>
             <div className="compTitle">
               <label htmlFor="compTitle">Title:</label>
@@ -112,7 +196,7 @@ class App extends Component {
                 type="text"
                 name="compTitle"
                 id="compTitleInput"
-                placeholder="Field of Study"
+                placeholder="Title at Workplace"
               />
             </div>
             <div className="startWork">
@@ -125,15 +209,11 @@ class App extends Component {
             </div>
             <div className="workSummary">
               <label htmlFor="workSummary">Work Summary:</label>
-              <textarea
-                name="workSummary"
-                id="workSummaryInput"
-                cols="30"
-                rows="10"></textarea>
+              <textarea name="workSummary" id="workSummaryInput" cols="30" rows="10"></textarea>
             </div>
             <button>Save</button>
           </div>
-        
+
           <button type="submit">Submit/Print</button>
         </form>
 
