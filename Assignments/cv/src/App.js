@@ -25,7 +25,7 @@ class App extends Component {
       reqdInfo: "",
       edExp: "",
       workExp: "",
-      userCV: [],
+      userCV: "",
     };
 
     this.onHandleChange = this.onHandleChange.bind(this);
@@ -317,9 +317,9 @@ class App extends Component {
           </button>
         </form>
 
-        {/* <Requiredinfo />
-        <Edexperience />
-        <Workexperience /> */}
+        <Requiredinfo userCV={this.state.userCV} />
+        <Edexperience userCV={this.state.userCV} />
+        <Workexperience userCV={this.state.userCV} />
       </div>
     );
   }
