@@ -15,6 +15,7 @@ const ToDoForm = ({ addToDo }) => {
   return (
     <form onSubmit={createToDo}>
       <input type="text" name="text" id="text" value={todoitem} onChange={(e) => setTodoitem(e.target.value)}/>
+      <button onClick={createToDo} style={{cursor: "pointer"}}>Add To-Do!</button>
     </form>
   );
 };
@@ -30,7 +31,7 @@ function App() {
   ]);
 
   const addToDo = (todoitem) => {
-    const newToDoList = [...todos, {text: todoitem}];
+    const newToDoList = [...todos, {id: uniqid(), text: todoitem}];
     setTodos(newToDoList);
   };
 

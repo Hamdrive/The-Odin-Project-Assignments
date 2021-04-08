@@ -4,8 +4,12 @@ const ToDo = ({ todo, editToDo, removeToDo }) => {
   return (
     <div className="todoitem">
       {todo.text}
-      <button onClick={() => editToDo(todo.id)}>Edit</button>
-      <button onClick={() => removeToDo(todo.id)}>Delete</button>
+      <button onClick={() => editToDo(todo.id)} style={{ cursor: "pointer" }}>
+        Edit
+      </button>
+      <button onClick={() => removeToDo(todo.id)} style={{ cursor: "pointer" }}>
+        Delete
+      </button>
     </div>
   );
 };
