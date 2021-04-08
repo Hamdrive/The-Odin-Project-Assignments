@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ToDo from "./components/ToDo"
+import uniqid from "uniqid";
 import "./App.css";
 
 const ToDoForm = ({ addToDo }) => {
@@ -18,16 +19,29 @@ const ToDoForm = ({ addToDo }) => {
   );
 };
 
+const editToDoForm = () =>{}
+
 
 function App() {
   const [todos, setTodos] = useState([
-    { text: "Create To Do App" },
-    { text: "Complete writeups" },
-    {text: "Listen to 2000s songs"}
+    { id: uniqid(), text: "Create To Do App" },
+    { id: uniqid(), text: "Complete writeups" },
+    {id: uniqid(),text: "Listen to 2000s songs"}
   ]);
 
   const addToDo = (todoitem) => {
     const newToDoList = [...todos, {text: todoitem}];
+    setTodos(newToDoList);
+  };
+
+  const editToDo = (id) =>{
+    if(todos.id === id){
+
+    }
+  }
+
+  const removeToDo = (id) => {
+    const newToDoList = todos.filter((todo) => todo.id !== id);
     setTodos(newToDoList);
   };
     
@@ -36,10 +50,16 @@ function App() {
       <div className="todomain">
         <label> TO DO LIST</label>
         {todos.map((todo, index) => (
-          <ToDo key={index} index={index} todo={todo} />
+          <ToDo
+            key={uniqid}
+            index={index}
+            todo={todo}
+            editToDo={editToDo}
+            removeToDo={removeToDo}
+          />
         ))}
-      
-        <ToDoForm addToDo={addToDo}/>
+
+        <ToDoForm addToDo={addToDo} />
       </div>
     </div>
   ); 
