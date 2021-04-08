@@ -61,7 +61,7 @@ class App extends Component {
         mobNumber: "",
         DOB: "",
         
-        // userCV: this.state.userCV.concat(this.state.reqdInfo),
+        userCV : {...this.state.reqdInfo}
       },
       () => console.log(this.state.reqdInfo),
     );

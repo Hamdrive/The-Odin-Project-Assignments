@@ -7,7 +7,7 @@ const Requiredinfo = (props) =>{
     return (
       <div>
         <label htmlFor="">
-          <u>Required Information</u>
+          <u>General Information</u>
         </label>
         <p>{userCV.fName}</p>
         <p>{userCV.lName}</p>
