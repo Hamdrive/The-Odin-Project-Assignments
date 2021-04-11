@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ToDo from "./components/ToDo";
 import uniqid from "uniqid";
 import "./App.css";
@@ -30,10 +30,22 @@ const ToDoForm = ({ addToDo }) => {
 
 function App() {
   const [todos, setTodos] = useState([
-    { id: uniqid(), isComplete: false, text: "Create To Do App" },
-    { id: uniqid(), isComplete: false, text: "Complete writeups" },
-    { id: uniqid(), isComplete: false, text: "Listen to 2000s songs" },
+    // { id: uniqid(), isComplete: false, text: "Eat" },
+    // { id: uniqid(), isComplete: false, text: "Sleep" },
+    // { id: uniqid(), isComplete: false, text: "React" },
+    // { id: uniqid(), isComplete: false, text: "Repeat" },
   ]);
+
+  useEffect(() => {
+    let storedToDos = JSON.parse(localStorage.getItem("todolisthooks"))
+    if(storedToDos){
+      setTodos(storedToDos)
+    }
+  },[])
+  
+  useEffect(() => {
+    localStorage.setItem("todolisthooks", JSON.stringify(todos))
+  },[todos])
 
   const addToDo = (todoitem) => {
     const newToDoList = [
