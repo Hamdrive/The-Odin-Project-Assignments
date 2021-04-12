@@ -1,5 +1,6 @@
 import React from "react"
-import { FaTrash, FaPen } from "react-icons/fa";
+import { FaTrash, FaCheck } from "react-icons/fa";
+import { IconContext } from "react-icons";
 
 const ToDo = ({ todo, toDoComplete, removeToDo }) => {
   const handleCompleteTask = () =>{
@@ -14,14 +15,19 @@ const ToDo = ({ todo, toDoComplete, removeToDo }) => {
       </div>
 
       <div className="complete">
-        <text className="completebtn" onClick={() => handleCompleteTask()}>
-          <FaPen />
-        </text>
+        <p className="completebtn" onClick={() => handleCompleteTask()}>
+          <IconContext.Provider value={{ color: "green" }}>
+            <FaCheck />
+          </IconContext.Provider>
+        </p>
       </div>
+
       <div className="delete">
-        <text className="deletebtn" onClick={() => removeToDo(todo.id)}>
-          <FaTrash />
-        </text>
+        <p className="deletebtn" onClick={() => removeToDo(todo.id)}>
+          <IconContext.Provider value={{ color: "red" }}>
+            <FaTrash />
+          </IconContext.Provider>
+        </p>
       </div>
     </div>
   );

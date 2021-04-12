@@ -1,19 +1,20 @@
 import React, {useState} from "react"
 
-const ToDoForm = ({ addToDo }) => {
-  const placeholderArray = [
-    "Zoom Call Meeting at 11AM",
-    "Pick Up Dry cleaning",
-    "Get Groceries",
-    "Go to the Gym",
-    "Take A Bath",
-    "Walk the Dog",
-    "Take out the Trash",
-    "Call Mom",
-    "Doctor's Appointment at 10AM",
-  ];
-  const placeholderText = Math.floor(Math.random() * 6);
+const placeholderArray = [
+  "Zoom Call Meeting at 11AM",
+  "Pick Up Dry cleaning",
+  "Get Groceries",
+  "Go to the Gym",
+  "Take A Bath",
+  "Walk the Dog",
+  "Take out the Trash",
+  "Call Mom",
+  "Doctor's Appointment at 10AM",
+];
+const placeholderText = Math.floor(Math.random() * 6);
 
+const ToDoForm = ({ addToDo }) => {
+  
   const [todoitem, setTodoitem] = useState("");
 
   const createToDo = (e) => {

@@ -5,9 +5,11 @@
   
 }
 
-.app{
+body{
   background-color: #f4f1de;
-  height: 100%;
+}
+
+.app{
   display: flex;
   justify-content: center;
 }
