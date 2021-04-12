@@ -5,13 +5,14 @@
   
 }
 
-body{
-  background-color: #f4f1de;
-}
 
 .app{
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-color: #f4f1de;
+  min-height: 100vh;
 }
 
 .todomain{
@@ -20,6 +21,7 @@ body{
   align-items: center;
   margin-top: 15vh;
   width: 50vw;
+  margin-bottom: 5rem;
 }
 
 .title{
@@ -33,7 +35,12 @@ body{
   width: 75%;
   display: flex;
   justify-content: center;
-  margin-left: 7%
+  margin-left: 7%;
+}
+
+.todoinput form{
+  display: flex;
+  flex-direction: row;
 }
 
 .todoinput input{
@@ -43,7 +50,7 @@ body{
   border-bottom: 3px solid black;
   font-size: 32px;
   font-family: 'Raleway', sans-serif;
-  color: #14213d;
+  color: #3f3f3f;
   margin-bottom: 5rem;
   outline: none;
 }
@@ -51,15 +58,6 @@ body{
 .todoinput .addtodo{
   font-size: 32px;
   cursor: pointer;
-  transition: all 0.3s;
-}
-
-.todoinput .addtodo:hover{
-  transform: scale(1.03)
-}
-
-.todoinput .addtodo:active{
-  transform: scale(0.5)
 }
 
 .todos{
@@ -90,6 +88,56 @@ body{
 .complete{
   margin-right: 2rem;
 }
+
+footer{
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 2.5rem;
+  background-color: #f2cc8f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .footertext{
+  color: #d4d4d4;
+  font-size: 19px;
+  font-weight: 500;
+  font-family: 'Raleway', sans-serif;
+  margin-right: 1rem;
+}
+
+.twitterlogo{
+  margin-right: 1rem;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .todomain{
+    width: 75vw;
+  }
+  .todoinput{
+    width: 60%;
+    margin-left: 0;
+  }
+  .todoinput input{
+    width: 80%;
+  }
+  .complete{
+    margin-right: 1rem;
+  } 
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .complete{
+    margin-right: 0.5rem;
+  }  
+}
+
+
 
 
 

@@ -1,7 +1,9 @@
 import React, {useState} from "react"
+import { FaPlus } from "react-icons/fa";
+import { IconContext } from "react-icons";
 
 const placeholderArray = [
-  "Zoom Call Meeting at 11AM",
+  "Zoom Call @ 11AM",
   "Pick Up Dry cleaning",
   "Get Groceries",
   "Go to the Gym",
@@ -9,7 +11,7 @@ const placeholderArray = [
   "Walk the Dog",
   "Take out the Trash",
   "Call Mom",
-  "Doctor's Appointment at 10AM",
+  "Doctor's Appointment @ 10AM",
 ];
 const placeholderText = Math.floor(Math.random() * 6);
 
@@ -33,9 +35,11 @@ const ToDoForm = ({ addToDo }) => {
         onChange={(e) => setTodoitem(e.target.value)}
         placeholder={placeholderArray[placeholderText]}
       />
-      <text className="addtodo" onClick={createToDo}>
-        ✏️
-      </text>
+      <p className="addtodo" onClick={createToDo}>
+        <IconContext.Provider value={{ color: "#14213d" }}>
+          <FaPlus />
+        </IconContext.Provider>
+      </p>
     </form>
   );
 };
