@@ -1,50 +1,23 @@
 import { useEffect, useState } from "react";
 import ToDo from "./components/ToDo";
+import ToDoForm from "./components/ToDoForm"
 import uniqid from "uniqid";
 import "./App.css";
 
-const ToDoForm = ({ addToDo }) => {
-  const [todoitem, setTodoitem] = useState("");
 
-  const createToDo = (e) => {
-    e.preventDefault();
-    addToDo(todoitem);
-    setTodoitem("");
-  };
-
-  return (
-    <form onSubmit={createToDo}>
-      <input
-        type="text"
-        name="text"
-        id="text"
-        value={todoitem}
-        onChange={(e) => setTodoitem(e.target.value)}
-      />
-      <button onClick={createToDo} style={{ cursor: "pointer" }}>
-        Add To-Do!
-      </button>
-    </form>
-  );
-};
 
 function App() {
-  const [todos, setTodos] = useState([
-    // { id: uniqid(), isComplete: false, text: "Eat" },
-    // { id: uniqid(), isComplete: false, text: "Sleep" },
-    // { id: uniqid(), isComplete: false, text: "React" },
-    // { id: uniqid(), isComplete: false, text: "Repeat" },
-  ]);
+  const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    let storedToDos = JSON.parse(localStorage.getItem("todolisthooks"))
+    let storedToDos = JSON.parse(localStorage.getItem("react-todos"))
     if(storedToDos){
       setTodos(storedToDos)
     }
   },[])
   
   useEffect(() => {
-    localStorage.setItem("todolisthooks", JSON.stringify(todos))
+    localStorage.setItem("react-todos", JSON.stringify(todos));
   },[todos])
 
   const addToDo = (todoitem) => {
