@@ -1,6 +1,19 @@
 import React, {useState} from "react"
 
 const ToDoForm = ({ addToDo }) => {
+  const placeholderArray = [
+    "Zoom Call Meeting at 11AM",
+    "Pick Up Dry cleaning",
+    "Get Groceries",
+    "Go to the Gym",
+    "Take A Bath",
+    "Walk the Dog",
+    "Take out the Trash",
+    "Call Mom",
+    "Doctor's Appointment at 10AM",
+  ];
+  const placeholderText = Math.floor(Math.random() * 6);
+
   const [todoitem, setTodoitem] = useState("");
 
   const createToDo = (e) => {
@@ -17,10 +30,11 @@ const ToDoForm = ({ addToDo }) => {
         id="text"
         value={todoitem}
         onChange={(e) => setTodoitem(e.target.value)}
+        placeholder={placeholderArray[placeholderText]}
       />
-      <button onClick={createToDo} style={{ cursor: "pointer" }}>
-        Add To-Do!
-      </button>
+      <text className="addtodo" onClick={createToDo}>
+        ✏️
+      </text>
     </form>
   );
 };

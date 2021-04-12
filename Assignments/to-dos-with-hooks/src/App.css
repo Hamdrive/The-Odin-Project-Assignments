@@ -1,0 +1,94 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+.app{
+  background-color: #f4f1de;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.todomain{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15vh;
+  width: 50vw;
+}
+
+.title{
+  color: #14213d;
+  font-size: 56px;
+  font-family: 'Lobster', cursive;
+  margin-bottom: 5rem;
+}
+
+.todoinput{
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  margin-left: 7%
+}
+
+.todoinput input{
+  padding: 0 0.5rem;
+  border: none;
+  background-color: transparent;
+  border-bottom: 3px solid black;
+  font-size: 32px;
+  font-family: 'Raleway', sans-serif;
+  color: #14213d;
+  margin-bottom: 5rem;
+  outline: none;
+}
+
+.todoinput .addtodo{
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.todoinput .addtodo:hover{
+  transform: scale(1.03)
+}
+
+.todoinput .addtodo:active{
+  transform: scale(0.5)
+}
+
+.todos{
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+
+.todoitem{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+  font-size: 32px;
+  font-family: 'Raleway', sans-serif;
+  cursor: default;
+}
+
+.todolistitem{
+  width: 65%;
+  margin: 0 auto;
+  overflow-wrap: break-word;
+}
+
+.complete, .delete{
+  cursor: pointer;
+}
+
+.complete{
+  margin-right: 2rem;
+}
+
+
+
+

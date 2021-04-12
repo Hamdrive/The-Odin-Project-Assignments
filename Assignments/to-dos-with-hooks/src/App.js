@@ -21,6 +21,7 @@ function App() {
   },[todos])
 
   const addToDo = (todoitem) => {
+    if(!todoitem){return}
     const newToDoList = [
       ...todos,
       { id: uniqid(), isComplete: false, text: todoitem },
@@ -47,10 +48,13 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <div className="todomain">
-        <label> TO DO LIST</label>
-        <ToDoForm addToDo={addToDo} />
+        <label className="title"> TO DO LIST 📝</label>
+        <div className="todoinput">
+          <ToDoForm addToDo={addToDo} />
+        </div>
+        <div className="todos">
         {todos.map((todo, index) => (
           <ToDo
             key={uniqid()}
@@ -60,6 +64,7 @@ function App() {
             removeToDo={removeToDo}
           />
         ))}
+        </div>
       </div>
     </div>
   );

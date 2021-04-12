@@ -1,4 +1,5 @@
 import React from "react"
+import { FaTrash, FaPen } from "react-icons/fa";
 
 const ToDo = ({ todo, toDoComplete, removeToDo }) => {
   const handleCompleteTask = () =>{
@@ -7,14 +8,21 @@ const ToDo = ({ todo, toDoComplete, removeToDo }) => {
 
   return (
     <div className="todoitem">
-      {todo.isComplete === true ? <s>{todo.text}</s> : todo.text}
-      {console.log(todo)}
-      <button onClick={() => handleCompleteTask()} style={{ cursor: "pointer" }}>
-        Completed
-      </button>
-      <button onClick={() => removeToDo(todo.id)} style={{ cursor: "pointer" }}>
-        Delete
-      </button>
+      <div className="todolistitem">
+        {todo.isComplete === true ? <s>{todo.text}</s> : <p>{todo.text}</p>}
+        {console.log(todo)}
+      </div>
+
+      <div className="complete">
+        <text className="completebtn" onClick={() => handleCompleteTask()}>
+          <FaPen />
+        </text>
+      </div>
+      <div className="delete">
+        <text className="deletebtn" onClick={() => removeToDo(todo.id)}>
+          <FaTrash />
+        </text>
+      </div>
     </div>
   );
 };
